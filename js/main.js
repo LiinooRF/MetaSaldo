@@ -28,9 +28,8 @@ function getBalance() {
   loading(true);
   let cardNumber = cardNumberInput.value;
 
-  fetch(`https://nxd.cl/API_Targeta_Bip/?t=${cardNumber}&key=wWhAD1233`, {
-    mode: 'no-cors' // Aquí se establece el modo no-cors
-  })
+  // Cambia la URL a la de tu servidor proxy local
+  fetch(`http://207.244.224.2:3000/api/API_Targeta_Bip/?t=${cardNumber}&key=wWhAD1233`)
     .then((response) => response.json())
     .then((data) => {
       // Asegúrate de que la respuesta de la API sea la esperada y que el estado sea '1'
